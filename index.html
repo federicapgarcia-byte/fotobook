@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖❤️💞💗💓</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+  
+<body>
+   <button id="muteBtn" onclick="toggleMusic()">🔊</button>
+
+    <audio id="musica" src="musica.mp3" loop></audio>
+
+    <!-- INTRO -->
+    <div id="intro">
+        <h1 class="intro-titulo">PRESS START</h1>
+        <p class="intro-texto">mi amor espero q te guste💖</p>
+        <button class="start-btn" onclick="empezar()">START</button>
+    </div>
+
+<div class="contenedor">
+    <!-- FOTOBOOK -->
+    <div id="fotobook">
+        <h1>Nuestro photobook📸</h1>
+        <p class="subtitulo">Cada foto nuestra guarda un recuerdo❤️</p>
+
+        <div class="galeria">
+
+             <img src="foto13.JPEG"
+             data-texto="'todo empezo en el lab jaja. Este dia no se si fue el del resorte, pero fue la primera vez que revisamos todo y me acuerdo q me mostraste todas las cosas de optica jejej"
+            >  
+            <img src="foto14.JPEG"
+                 data-texto="realmente tengo el novio mas lindo del mundo"
+            >     
+            <img src="foto16.JPEG"
+               data-texto="AAAAAAA esta fue casi una citaaaaa, el dia q te deje sordo x la campana"
+            >
+            <img src="foto17.png"
+               data-texto="La maquina de atwood JFKHDGHFHKS dios q risa"
+            >
+            <img src="foto15.JPEG"
+               data-texto="el mismo dia del laser fuimos a tomar chocolatada con el martin"
+            >
+            <img src="foto1.jpg.jpg" class="ancha"
+                 data-texto="AL FIN NUESTRA PRIMERA CITAAAAA ❤️"
+            >
+            <img src="foto3.jpg.jpg" class="ancha"
+                 data-texto="de verdad me encanta esta foto🥹💕"
+            >
+            <img src="foto18.jpg" class="ancha"
+                data-texto="mira q cutes💗"
+            >    
+            <img src="foto19.jpg"
+                 data-texto="Esta creo que fue nuestra segunda o tercera cita, pero fue al poquito tiempo que empezamos a salir jejej"
+            >
+            <img src="foto2.jpg.jpg"
+               data-texto="💕"
+            >
+            <img src="foto20.jpg" class="ancha"
+                data-texto="cuando cogimos 🫦jejee" 
+            >
+            <img src="foto21.jpg" 
+                data-texto="que se repita 🙏🍆"
+            >
+            <img src="foto22.jpg" class="ancha"
+                data-texto="extraño mucho estar abrazada a vos 🥹🤧💖"
+            >
+            <img src="foto23.jpg" class="ancha"
+                data-texto="apa q beso💋💗, amo sacarme estas fts un poco cringes con vos jHFDJHFBH"
+            >
+            <img src="foto24.jpg" class="ancha"
+                data-texto="cara de malos👀🖤 ⛓️"
+            >
+            <img src="foto25.jpg" class="ancha"
+                data-texto="ay nahue lpm te amo muchisimo🤧❤️‍🩹"
+            >
+            <img src="foto26.JPEG" class="ancha"
+                data-texto="JSJSJFDSFHD LPM Q TERNURA"
+            >
+            <img src="foto27.JPEG" class="ancha"
+               data-texto="con la fumadora jsjjsj"
+               >
+            <img src="foto28.JPEG" class="ancha"
+               data-texto="OA ESAS NOCHES DE FORNITE"
+            >
+            <img src="foto29.JPEG" class="ancha"
+                data-texto="hdskfk me encanta esta ft, totalmente enamorada me veo, bueno me veo y estoy jejejgvfdbh🤧💞"
+            >
+            <img src="foto30.JPEG" class="ancha"
+                data-texto="con la michix2"
+            > 
+            <img src="foto31.JPEG" class="ancha"
+                data-texto="de verdad q estoy muy enamorada jejeje 🤧💖"
+            >
+            <img src="foto32.JPEG" class="ancha"
+               data-texto="AAAAAAAAAA EL CUMPLE DEL MARTIN AAAAA, eu me acabo de dar cuenta q el martin y el tomi carrearon el comienzo de esta pareja OAAAA"
+            >
+            <img src="foto33.JPEG" class="ancha"
+               data-texto="este dia se cumplio un año desde q nos conocimos"
+            >
+            <img src="foto34.JPEG" class="ancha"
+                data-texto="🤧💖"
+            > 
+            <img src="foto35.JPEG" class="ancha"
+                data-texto="AMO ESTA FOTO, DE VERDAD TE AMO MUCHISIMO"
+            >            
+            <img src="foto36.JPEG" class="ancha"
+                data-texto="re cringe lo q voy a decir pero me haces muy feliz"
+            >
+            <img src="foto37.JPEG" class="ancha"
+               data-texto="CUTES💗"
+            >
+            <img src="foto38.jpeg" class="ancha"
+                data-texto="aw ame esta cita🤧"
+            >
+            <img src="foto4.jpeg" class="ancha"
+               data-texto="JAJAJASJ "
+            >
+            <img src="foto5.jpeg" 
+               data-texto="QUE HERMOSO, esta ft te la saque despues del beso debajo de la planta jejefbisdghvb"
+            >
+            <img src="foto39.jpeg" class="ancha"
+                data-texto="FVHDFDHHDFK tus ojitosss🥹🤧"
+            >
+            <img src="foto8.jpeg" class="ancha"
+                data-texto="EL DIA Q FUIMOS A VER LA PELIIIII, q hacia un re frio, y despues nos quedamos caminando un monton de tiempo"
+            >
+            <img src="foto11.jpeg" class="ancha"
+                data-texto="soy tu pulga jejjejesj"
+            >
+            <img src="foto7.jpeg" class="ancha"
+               data-texto="AY DIOS TE EXTRAÑO MUCHISIMO y extraño cuando me miras asi jejedgdfhbs"
+            >
+            <img src="foto10.jpeg" class="ancha"
+                data-texto="AAAAAAAAAAAA EL RAMEEEEN ÑAM ÑAM ÑAM"
+            >
+            <img src="foto12.jpeg" class="ancha"
+                data-texto="esta fue la ultima vez q nos vimos, y el dia q nos pusimos de novios🥹🤧"
+            >
+       
+            <img
+                src="portada.jpg"
+                class="video"
+                data-video="recuerdo.mp4"
+                data-texto="por ultimo te dejo este videito de una vez q estabamos boludeando 💕"
+            />
+       
+
+        </div>
+        <button class="final-btn" onclick="abrirCartaFinal()">
+    Ver carta final 💌
+</button>
+
+    </div>
+</div>
+
+<!-- CARTA / FOTO -->
+<div id="modal" class="modal" onclick="cerrarCarta()">
+  <div class="contenido" onclick="event.stopPropagation()">
+    <span class="cerrar" onclick="cerrarCarta()">×</span>
+
+    <div id="mediaCarta"></div>
+    <p id="textoCarta"></p>
+  </div>
+</div>
+
+
+</div>
+
+
+    <script src="script.js"></script>
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>

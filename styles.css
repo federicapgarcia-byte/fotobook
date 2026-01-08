@@ -1,0 +1,435 @@
+body {
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("fondo5.png");
+    background-size: cover;
+   background-position: left bottom;
+    background-attachment: fixed;
+}
+
+/* OVERLAY SUAVE (POCO DIFUMINADO) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 180, 120, 0.15);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+/* INTRO */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.intro-titulo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 #d62828;
+}
+
+.intro-texto {
+    font-size: 22px;
+    color: #ffd6a5;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    padding: 15px 30px;
+    background: #d62828;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+/* FOTOBOOK */
+#fotobook {
+    display: none;
+    opacity: 0;
+}
+
+h1 {
+    width: 100%;
+    margin: 24px auto 12px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 26px;
+    color: #3b1f0e;
+}
+
+
+.subtitulo {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 fotos por fila */
+    gap: 26px;                             /* más aire entre fotos */
+    justify-content: center;
+    padding: 24px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fotos normales */
+.galeria img {
+    width: 100%;
+    max-width: 160px;      /* controla tamaño real en celular */
+    margin: 0 auto;
+
+    padding: 10px 10px 24px 10px; /* marco tipo polaroid */
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+}
+
+/* Fotos más anchas (si querés destacar alguna) */
+.galeria img.ancha {
+    max-width: 190px;
+}
+
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* MODAL CARTA */
+.modal {
+    display: none;            /* 👈 OCULTO AL INICIO */
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(3px);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 30;
+}
+
+
+.contenido {
+    background: #fdf1dc;
+    padding: 22px;
+    width: 320px;
+    max-width: 90%;
+
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5;
+
+    box-shadow:
+        0 16px 30px rgba(0,0,0,0.35),
+        inset 0 0 0 2px #e6d3b1;
+
+    border-radius: 14px;
+
+    animation: abrirCarta 0.3s ease;
+}
+
+
+.contenido::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.02) 3px
+    );
+    pointer-events: none;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@keyframes abrirCarta {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.galeria img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+.final-btn {
+    margin-top: 30px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    padding: 12px 25px;
+    background: #d62828;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    box-shadow: 3px 3px 0 #000;
+}
+
+.final-btn:hover {
+    transform: scale(1.05);
+}
+
+/* FADE TRANSITIONS */
+.fade-out {
+    animation: fadeOut 0.8s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.contenido.final {
+    width: 420px;
+    text-align: center;
+    background: #fff4e6;
+    font-size: 20px;
+}
+
+.contenido.final::before {
+    opacity: 0.04;
+}
+/* ===== 📱 MOBILE DEFINITIVO ===== */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 20px;
+        margin: 20px auto 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;              /* MÁS ESPACIO ENTRE FOTOS */
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .galeria img {
+        width: 100%;
+        max-width: 150px;       /* TAMAÑO REAL CONTROLADO */
+        height: auto;           /* 🔥 NO deformar */
+        margin: 0 auto;
+
+        padding: 10px 10px 22px 10px;
+        background: #fff;
+        border-radius: 12px;
+
+        box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    }
+
+    .galeria img.ancha {
+        max-width: 150px;       /* en mobile TODAS iguales */
+    }
+
+    .contenido {
+        width: 85%;
+        padding: 18px;
+        font-size: 14px;
+        margin: 25% auto;
+    }
+
+
+    .start-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .intro-titulo {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+#muteBtn {
+    display: none; /* 👈 OCULTO AL INICIO */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 20;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#muteBtn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 1);
+}
+#imagenCarta {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 16px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    animation: zoomFoto 0.35s ease;
+}
+
+@keyframes zoomFoto {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@media (min-width: 1024px) {
+    .galeria img {
+        max-width: 190px;
+    }
+}
+.video-thumb {
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
+
+    padding: 10px 10px 24px 10px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+
+    object-fit: cover;
+}
+
+.video-thumb:hover {
+    transform: scale(1.05);
+}
+#videoCarta {
+    width: 100%;
+    max-width: 420px;
+    max-height: 65vh;
+
+    border-radius: 14px;
+    margin-bottom: 16px;
+
+    object-fit: contain;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+#mediaCarta img,
+#mediaCarta video {
+    width: 100%;
+    max-width: 420px;
+    max-height: 65vh;
+
+    border-radius: 14px;
+    margin-bottom: 16px;
+
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+/* 💖 CORAZONES FLOTANDO */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: flotar 4s linear forwards;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.9;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
